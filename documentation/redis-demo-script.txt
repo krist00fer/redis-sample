@@ -1,0 +1,97 @@
+--------------------
+DEMO1
+PING, SET, GET, DEL
+--------------------
+
+redis-server
+
+redis-cli
+
+PING
+SET msg "Hello World!"
+GET msg
+DEL msg
+GET msg
+
+
+----------------------------------------
+DEMO 2
+Create and Connect to Azure Redis Cache
+----------------------------------------
+
+// Create a new Redis Cache using the portal
+
+redis-cli -h krist00fer.redis.cache.windows.net -a CMwYYbUF7e2ZyYZcXK0JR65XRrqBpCzbDrNwi1bHH5k=
+
+SET agent47:mission "Go to London!" EX 15
+GET agent47:mission
+GET agent47:mission
+
+----------------------------------------
+DEMO 3
+Lists
+----------------------------------------
+
+LPUSH destinations Stockholm
+LRANGE destinations 0 -1
+LPUSH destinations Copenhagen
+LRANGE destinations 0 -1
+RPUSH destinations Oslo
+LRANGE destinations 0 -1
+RPUSH destinations Paris London Milan
+LRANGE destinations 0 -1
+
+LPOP destinations
+LRANGE destinations 0 -1
+RPOP destinations
+LRANGE destinations 0 -1
+LTRIM destinations 0 1
+LRANGE destinations 0 -1
+
+BRPOP destinations 60
+BRPOP destinations 0
+BRPOP destinations 0
+
+----------------------------------------
+DEMO 3
+Blocking Operations on Lists
+----------------------------------------
+
+// Open two new redis-cli
+
+redis-cli -h krist00fer.redis.cache.windows.net -a CMwYYbUF7e2ZyYZcXK0JR65XRrqBpCzbDrNwi1bHH5k=
+
+// Start another blocking right pop
+
+BRPOP destinations 0
+
+// In the third console add two destinations and watch the other two windows
+
+LPUSH destinations "New York"
+LPUSH destinations Berlin
+
+
+-------------------
+DEMO 4
+Hashes
+-------------------
+
+HMSET agent:47 birthyear 1963 birthplace romania clonenumber 47 weight "85.5 kg"
+HGETALL agent:47
+HGET birthyear
+HINCRBY agent:47 birthyear 1
+
+
+HMSET agent:47 birthyear 1960 birthplace sweden clonenumber 47 weight "85.5 kg"
+HGETALL agent:47
+
+HGET agent:47 birthplace
+HSET agent:47 birthplace romania
+
+HGET agent:47 birthyear
+HINCRBY agent:47 birthyear 4
+
+HGETALL agent:47
+
+
+
