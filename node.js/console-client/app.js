@@ -8,3 +8,7 @@ client.on("error", function (err) {
 });
 
 client.set("barcode", "640509 - 040147", redis.print);
+
+client.hgetall("agent:47", function (err, obj) {
+    console.dir(obj);
+});
