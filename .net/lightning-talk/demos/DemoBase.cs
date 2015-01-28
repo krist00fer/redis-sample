@@ -20,9 +20,19 @@ namespace lightning_talk.demos
             return File.ReadAllLines("quotes.txt");
         }
 
+        public string[] ReadUserNamesFromFile()
+        {
+            return File.ReadAllLines("usernames.txt");
+        }
+
         public bool CrashSimulated()
         {
             return _rnd.Next(100) < 5; // Simulate crash 5% of the times
+        }
+
+        public int GetRandomScore()
+        {
+            return _rnd.Next(100, 999);
         }
     }
 

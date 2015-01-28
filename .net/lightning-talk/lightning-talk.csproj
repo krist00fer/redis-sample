@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="demos\Demo04B.cs" />
+    <Compile Include="demos\Demo04A.cs" />
     <Compile Include="demos\Demo03A.cs" />
     <Compile Include="demos\Demo03B.cs" />
     <Compile Include="demos\Demo02B.cs" />
@@ -69,6 +71,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="usernames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="quotes.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
