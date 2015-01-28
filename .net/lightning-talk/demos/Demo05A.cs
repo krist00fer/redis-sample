@@ -5,8 +5,8 @@ using System.Threading;
 
 namespace lightning_talk.demos
 {
-    [Command("Demo04A")]
-    class Demo04A : DemoBase, IConsoleCommand
+    [Command("Demo05A")]
+    class Demo05A : DemoBase, IConsoleCommand
     {
         public void Execute(CommandArgs args)
         {
