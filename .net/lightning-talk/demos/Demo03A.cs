@@ -14,9 +14,9 @@ namespace lightning_talk.demos
             Console.Clear();
 
             // Clear cache of old items
-            cache.KeyDelete("quotequeue");
-            cache.KeyDelete("processedquotes");
-            cache.KeyDelete("processingquotes");
+            db.KeyDelete("quotequeue");
+            db.KeyDelete("processedquotes");
+            db.KeyDelete("processingquotes");
 
             Console.WriteLine("Press <Q> to add single quote");
             Console.WriteLine("Press <W> to add 30 quotes");
@@ -32,7 +32,7 @@ namespace lightning_talk.demos
                 if (key.Key == ConsoleKey.Q)
                 {
                     var quote = quotes.Random();
-                    cache.ListLeftPush("quotequeue", quote);
+                    db.ListLeftPush("quotequeue", quote);
                     Console.Write("  {0}\r\n", quote);
                 }
                 else if (key.Key == ConsoleKey.W)
@@ -40,14 +40,14 @@ namespace lightning_talk.demos
                     for (int i = 0; i < 30; i++)
                     {
                         var quote = quotes.Random();
-                        cache.ListLeftPush("quotequeue", quote);
+                        db.ListLeftPush("quotequeue", quote);
                         if (i % 10 == 0)
                             Console.Write(".");
                     }
                 }
                 else if (key.Key == ConsoleKey.E)
                 {
-                    Console.WriteLine("Processed quotes: {0}", cache.StringGet("processedquotes"));
+                    Console.WriteLine("Processed quotes: {0}", db.StringGet("processedquotes"));
                 }
                 else if (key.Key == ConsoleKey.R)
                 {
@@ -56,7 +56,7 @@ namespace lightning_talk.demos
 
                     do
                     {
-                        q = cache.ListRightPopLeftPush("processingquotes", "quotequeue");
+                        q = db.ListRightPopLeftPush("processingquotes", "quotequeue");
                         i++;
                     } 
                     while (!string.IsNullOrEmpty(q));

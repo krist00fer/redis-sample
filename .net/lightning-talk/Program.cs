@@ -23,6 +23,8 @@ namespace lightning_talk
             ConsoleHelper.RegisterCommand<Demo02C>();
             ConsoleHelper.RegisterCommand<Demo03A>();
             ConsoleHelper.RegisterCommand<Demo03B>();
+            ConsoleHelper.RegisterCommand<Demo04A>();
+            ConsoleHelper.RegisterCommand<Demo04B>();
             ConsoleHelper.RegisterCommand<Demo05A>();
             ConsoleHelper.RegisterCommand<Demo05B>();
 

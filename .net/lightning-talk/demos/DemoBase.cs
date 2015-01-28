@@ -13,7 +13,14 @@ namespace lightning_talk.demos
         private static Random _rnd = new Random();
 
         /*"krist00fer.redis.cache.windows.net,ssl=true,password=CMwYYbUF7e2ZyYZcXK0JR65XRrqBpCzbDrNwi1bHH5k="*/
-        protected IDatabase cache = ConnectionMultiplexer.Connect("localhost").GetDatabase();
+        protected ConnectionMultiplexer redis;
+        protected IDatabase db;
+
+        public DemoBase()
+        {
+            redis = ConnectionMultiplexer.Connect("localhost");
+            db = redis.GetDatabase();
+        }
 
         public string[] ReadQuotesFromFile()
         {

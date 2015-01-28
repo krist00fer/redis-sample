@@ -17,7 +17,7 @@ namespace lightning_talk.demos
                 var quote = quotes.Random();
                 Console.WriteLine("Quote for the next 10 seconds is:\r\n  {0}\r\n", quote);
 
-                cache.StringSet("quote", quote);
+                db.StringSet("quote", quote);
 
                 Thread.Sleep(10000);
             }

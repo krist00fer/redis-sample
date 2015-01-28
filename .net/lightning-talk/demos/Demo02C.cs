@@ -21,12 +21,12 @@ namespace lightning_talk.demos
                 if (key.Key == ConsoleKey.L)
                 {
                     Console.WriteLine("(LPOP)");
-                    quote = cache.ListLeftPop("quotelist");
+                    quote = db.ListLeftPop("quotelist");
                 }
                 else if (key.Key == ConsoleKey.R)
                 {
                     Console.WriteLine("(RPOP)");
-                    quote = cache.ListRightPop("quotelist");
+                    quote = db.ListRightPop("quotelist");
                 }
                 else
                 {

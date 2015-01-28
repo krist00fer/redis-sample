@@ -11,7 +11,7 @@ namespace lightning_talk.demos
     {
         public void Execute(CommandArgs args)
         {
-            cache.KeyDelete("scores");
+            db.KeyDelete("scores");
 
             Console.CursorVisible = false;
          
@@ -22,7 +22,7 @@ namespace lightning_talk.demos
                 Console.WriteLine("------------------------------------------");
                 Console.WriteLine();
 
-                var scores = cache.SortedSetRangeByRankWithScores("scores", 0, 25, Order.Descending);
+                var scores = db.SortedSetRangeByRankWithScores("scores", 0, 25, Order.Descending);
 
                 foreach (var score in scores)
                 {

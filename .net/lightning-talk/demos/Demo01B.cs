@@ -12,7 +12,7 @@ namespace lightning_talk.demos
         {
             while (true)
             {
-                var quote = cache.StringGet("quote");
+                var quote = db.StringGet("quote");
 
                 Console.WriteLine("Current quote is:\r\n  {0}\r\n", quote);
 

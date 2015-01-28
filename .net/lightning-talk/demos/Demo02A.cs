@@ -11,7 +11,7 @@ namespace lightning_talk.demos
         public void Execute(CommandArgs args)
         {
             // Clear list if old items
-            cache.KeyDelete("quotelist");
+            db.KeyDelete("quotelist");
 
             Console.WriteLine("Pushing 10 quotes to 'quotelist' (10x RPOP)\r\n");
 
@@ -23,7 +23,7 @@ namespace lightning_talk.demos
 
                 Console.WriteLine("  {0}\r\n", quote);
 
-                cache.ListRightPush("quotelist", quote);
+                db.ListRightPush("quotelist", quote);
             }
 
         }

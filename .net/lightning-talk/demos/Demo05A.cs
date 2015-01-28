@@ -24,7 +24,7 @@ namespace lightning_talk.demos
 
                 Console.WriteLine("  {0}, {1} points", user, score);
 
-                cache.SortedSetAdd("scores", user, score);
+                db.SortedSetAdd("scores", user, score);
 
                 Thread.Sleep(200);
             }

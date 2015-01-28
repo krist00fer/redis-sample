@@ -16,7 +16,7 @@ namespace lightning_talk.demos
 
             while (true)
             {
-                string quote = cache.ListRightPopLeftPush("quotequeue", "processingquotes");
+                string quote = db.ListRightPopLeftPush("quotequeue", "processingquotes");
 
                 if (string.IsNullOrEmpty(quote))
                 {
@@ -41,8 +41,8 @@ namespace lightning_talk.demos
                         Console.WriteLine("\r\n  {0}", quote.ToUpper());
                         // Simulate light work load by sleeping for 500ms
                         Thread.Sleep(500);
-                        cache.StringIncrement("processedquotes", 1);
-                        cache.ListRemove("processingquotes", quote);
+                        db.StringIncrement("processedquotes", 1);
+                        db.ListRemove("processingquotes", quote);
                     }
                 }
             }

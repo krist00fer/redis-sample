@@ -17,7 +17,7 @@ namespace lightning_talk.demos
                 Console.Clear();
                 Console.WriteLine("Listing quotes in list (LRANGE)\r\n");
 
-                var quotes = cache.ListRange("quotelist", 0, -1);
+                var quotes = db.ListRange("quotelist", 0, -1);
 
                 foreach (var quote in quotes)
                 {
