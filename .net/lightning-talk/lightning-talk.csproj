@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{949160BB-E2F0-4381-BE22-634C59A4B2B3}</ProjectGuid>
+    <ProjectGuid>{361F4DF0-8E0D-41F9-BD04-0BC664E8E3F8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>console_client</RootNamespace>
-    <AssemblyName>console-client</AssemblyName>
+    <RootNamespace>lightning_talk</RootNamespace>
+    <AssemblyName>lightning-talk</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,8 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="StackExchange.Redis, Version=1.0.316.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ConsoleHelper">
+      <HintPath>..\packages\Console.Helper.1.0.2\lib\ConsoleHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="ConsoleTables.Core">
+      <HintPath>..\packages\ConsoleTables.1.0.0\lib\net45\ConsoleTables.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis">
       <HintPath>..\packages\StackExchange.Redis.1.0.394\lib\net45\StackExchange.Redis.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -45,12 +53,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="demos\Demo03A.cs" />
+    <Compile Include="demos\Demo03B.cs" />
+    <Compile Include="demos\Demo02B.cs" />
+    <Compile Include="demos\Demo02C.cs" />
+    <Compile Include="demos\Demo02A.cs" />
+    <Compile Include="demos\Demo01A.cs" />
+    <Compile Include="demos\Demo01B.cs" />
+    <Compile Include="demos\DemoBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="quotes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

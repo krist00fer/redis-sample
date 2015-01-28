@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console-client", "console-client\console-client.csproj", "{949160BB-E2F0-4381-BE22-634C59A4B2B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lightning-talk", "lightning-talk\lightning-talk.csproj", "{361F4DF0-8E0D-41F9-BD04-0BC664E8E3F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{949160BB-E2F0-4381-BE22-634C59A4B2B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{949160BB-E2F0-4381-BE22-634C59A4B2B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{949160BB-E2F0-4381-BE22-634C59A4B2B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361F4DF0-8E0D-41F9-BD04-0BC664E8E3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361F4DF0-8E0D-41F9-BD04-0BC664E8E3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361F4DF0-8E0D-41F9-BD04-0BC664E8E3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361F4DF0-8E0D-41F9-BD04-0BC664E8E3F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,5 @@
 var redisHost = 'krist00fer.redis.cache.windows.net';
-var redisPass = 'CMwYYbUF7e2ZyYZcXK0JR65XRrqBpCzbDrNwi1bHH5k=';
+var redisPass = 'LEZet4Pf66o6zQeWybMf7EHc6JM/8a/5sxIHHskdqWE=';
 
 var app = require('express')();
 var http = require('http').Server(app);
