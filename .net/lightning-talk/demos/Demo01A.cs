@@ -10,14 +10,19 @@ namespace lightning_talk.demos
     {
         public void Execute(CommandArgs args)
         {
+            Console.Clear();
+            Console.CursorVisible = false;
+
             var quotes = ReadQuotesFromFile();
 
             while (true)
             {
                 var quote = quotes.Random();
-                Console.WriteLine("Quote for the next 10 seconds is:\r\n  {0}\r\n", quote);
-
-                db.StringSet("quote", quote);
+                db.StringSet("quote", quote); 
+                
+                ConsoleX.WriteLine("Quote for the next 10 seconds is:");
+                ConsoleX.WriteLine("  {0}", quote);
+                ConsoleX.WriteLine();
 
                 Thread.Sleep(10000);
             }

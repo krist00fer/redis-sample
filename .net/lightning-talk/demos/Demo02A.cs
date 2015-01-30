@@ -10,10 +10,14 @@ namespace lightning_talk.demos
     {
         public void Execute(CommandArgs args)
         {
+            Console.Clear();
+            Console.CursorVisible = false;
+
             // Clear list if old items
             db.KeyDelete("quotelist");
 
-            Console.WriteLine("Pushing 10 quotes to 'quotelist' (10x RPOP)\r\n");
+            ConsoleX.WriteLine("Pushing 10 quotes to 'quotelist' (10x RPOP)");
+            ConsoleX.WriteLine();
 
             var quotes = ReadQuotesFromFile();
 
@@ -21,9 +25,11 @@ namespace lightning_talk.demos
             {
                 var quote = quotes.Random();
 
-                Console.WriteLine("  {0}\r\n", quote);
-
                 db.ListRightPush("quotelist", quote);
+
+                ConsoleX.WriteLine("  {0}", quote);
+                ConsoleX.WriteLine();
+
             }
 
         }

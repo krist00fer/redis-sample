@@ -30,17 +30,19 @@ namespace lightning_talk.demos
                     {
                         var c = Console.ForegroundColor;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\r\n");
-                        Console.WriteLine("WARNING        -    Process simulated a crash during proccessing of quote");
+                        ConsoleX.WriteLine();
+                        ConsoleX.WriteLine();
+                        ConsoleX.WriteLine("WARNING        -    Process simulated a crash during proccessing of quote");
                         Thread.Sleep(5000);
-                        Console.WriteLine("INFORMATION    -    Recovering from simulated crash and continuing processing of quotes\r\n");
+                        ConsoleX.WriteLine("INFORMATION    -    Recovering from simulated crash and continuing processing of quotes\r\n");
                         Console.ForegroundColor = c;
                     }
                     else
                     {
-                        Console.WriteLine("\r\n  {0}", quote.ToUpper());
-                        // Simulate light work load by sleeping for 500ms
-                        Thread.Sleep(500);
+                        ConsoleX.WriteLine();
+                        ConsoleX.WriteLine("  {0}", quote.ToUpper());
+                        // Simulate light work load by sleeping for 300ms
+                        Thread.Sleep(300);
                         db.StringIncrement("processedquotes", 1);
                         db.ListRemove("processingquotes", quote);
                     }

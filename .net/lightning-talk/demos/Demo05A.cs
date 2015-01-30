@@ -13,7 +13,10 @@ namespace lightning_talk.demos
             Console.CursorVisible = false;
             Console.Clear();
 
-            Console.WriteLine("Simulating player scores\r\n");
+            db.KeyDelete("scores");
+
+            ConsoleX.WriteLine("Simulating player scores");
+            ConsoleX.WriteLine();
 
             var users = ReadUserNamesFromFile();
 
@@ -22,11 +25,11 @@ namespace lightning_talk.demos
                 var user = users.Random();
                 var score = GetRandomScore();
 
-                Console.WriteLine("  {0}, {1} points", user, score);
+                ConsoleX.WriteLine("  {0}, {1} points", user, score);
 
                 db.SortedSetAdd("scores", user, score);
 
-                Thread.Sleep(200);
+                Thread.Sleep(300);
             }
         }
     }

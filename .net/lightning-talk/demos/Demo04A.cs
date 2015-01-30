@@ -8,11 +8,14 @@ namespace lightning_talk.demos
     [Command("Demo04A")]
     class Demo04A : DemoBase, IConsoleCommand
     {
+        private const int maxX = 40;
+        private const int maxY = 30;
+
         Random _rnd = new Random();
 
         public void Execute(CommandArgs args)
         {
-            int x = 10, y = 10;
+            int x = maxX / 2, y = maxY / 2;
 
             Console.CursorVisible = false;
             Console.Clear();
@@ -26,20 +29,20 @@ namespace lightning_talk.demos
 
                 if (x < 0)
                     x = 0;
-                else if (x >= 20)
-                    x = 19;
+                else if (x >= maxX)
+                    x = maxX - 1;
 
                 if (y < 0)
                     y = 0;
-                else if (y >= 20)
-                    y = 19;
+                else if (y >= maxY)
+                    y = maxY - 1;
 
                 string pos = string.Format("{0},{1}", x, y);
                 Console.WriteLine(pos);
 
                 sub.Publish("positions", pos);
 
-                Thread.Sleep(50);
+                Thread.Sleep(100);
             }
         }
 
@@ -48,11 +51,15 @@ namespace lightning_talk.demos
             var r = _rnd.Next(100);
 
             if (r < 10)
+                return -2;
+            if (r < 20)
                 return -1;
-            else if (r >= 90)
-                return 1;
-            else
+            if (r < 80)
                 return 0;
+            if (r < 90)
+                return 1;
+
+            return 2;
         }
     }
 }

@@ -18,10 +18,10 @@ namespace lightning_talk.demos
             db.KeyDelete("processedquotes");
             db.KeyDelete("processingquotes");
 
-            Console.WriteLine("Press <Q> to add single quote");
-            Console.WriteLine("Press <W> to add 30 quotes");
-            Console.WriteLine("Press <E> to show number of processed quotes");
-            Console.WriteLine("Press <R> to re-process quotes that failed to be processed");
+            ConsoleX.WriteLine("Press <Q> to add single quote");
+            ConsoleX.WriteLine("Press <W> to add 30 quotes");
+            ConsoleX.WriteLine("Press <E> to show number of processed quotes");
+            ConsoleX.WriteLine("Press <R> to re-process quotes that failed to be processed");
 
             var quotes = ReadQuotesFromFile();
 
@@ -33,7 +33,7 @@ namespace lightning_talk.demos
                 {
                     var quote = quotes.Random();
                     db.ListLeftPush("quotequeue", quote);
-                    Console.Write("  {0}\r\n", quote);
+                    ConsoleX.WriteLine("  {0}", quote);
                 }
                 else if (key.Key == ConsoleKey.W)
                 {
@@ -47,7 +47,7 @@ namespace lightning_talk.demos
                 }
                 else if (key.Key == ConsoleKey.E)
                 {
-                    Console.WriteLine("Processed quotes: {0}", db.StringGet("processedquotes"));
+                    ConsoleX.WriteLine("Processed quotes: {0}", db.StringGet("processedquotes"));
                 }
                 else if (key.Key == ConsoleKey.R)
                 {
@@ -61,11 +61,11 @@ namespace lightning_talk.demos
                     } 
                     while (!string.IsNullOrEmpty(q));
 
-                    Console.WriteLine("Re-processing {0} quotes", i);
+                    ConsoleX.WriteLine("Re-processing {0} quotes", i);
                 }
 
 
-                Console.WriteLine();
+                ConsoleX.WriteLine();
             }   
         }
     }

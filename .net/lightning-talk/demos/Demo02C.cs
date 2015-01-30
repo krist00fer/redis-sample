@@ -10,6 +10,9 @@ namespace lightning_talk.demos
     {
         public void Execute(CommandArgs args)
         {
+            Console.Clear();
+            Console.CursorVisible = false;
+
             Console.WriteLine("Press <L> or <R> to POP from quotelist from Left or Right\r\n");
 
             while(true)
@@ -20,12 +23,12 @@ namespace lightning_talk.demos
 
                 if (key.Key == ConsoleKey.L)
                 {
-                    Console.WriteLine("(LPOP)");
+                    ConsoleX.WriteLine("(LPOP)");
                     quote = db.ListLeftPop("quotelist");
                 }
                 else if (key.Key == ConsoleKey.R)
                 {
-                    Console.WriteLine("(RPOP)");
+                    ConsoleX.WriteLine("(RPOP)");
                     quote = db.ListRightPop("quotelist");
                 }
                 else
@@ -33,7 +36,8 @@ namespace lightning_talk.demos
                     quote = "INCORRECT KEY PRESSED";
                 }
 
-                Console.WriteLine("  {0}\r\n", quote);
+                ConsoleX.WriteLine("  {0}", quote);
+                ConsoleX.WriteLine();
             }   
         }
     }

@@ -10,11 +10,16 @@ namespace lightning_talk.demos
     {
         public void Execute(CommandArgs args)
         {
+            Console.Clear();
+            Console.CursorVisible = false;
+
             while (true)
             {
                 var quote = db.StringGet("quote");
 
-                Console.WriteLine("Current quote is:\r\n  {0}\r\n", quote);
+                ConsoleX.WriteLine("Current quote is:");
+                ConsoleX.WriteLine("  {0}", quote);
+                ConsoleX.WriteLine();
 
                 Thread.Sleep(3000);
             }

@@ -11,8 +11,6 @@ namespace lightning_talk.demos
     {
         public void Execute(CommandArgs args)
         {
-            db.KeyDelete("scores");
-
             Console.CursorVisible = false;
          
             while (true)
