@@ -34,7 +34,7 @@ namespace lightning_talk
                 Console.SetCursorPosition(currentLeft, currentTop);
                 Console.WriteLine(ms.Step(i));
 
-                Thread.Sleep(1);
+                Thread.Sleep(10);
             }
 
             Console.CursorVisible = currentCursorVisible;
