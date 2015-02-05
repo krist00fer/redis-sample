@@ -16,11 +16,11 @@ namespace lightning_talk.demos
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Highscore - Top 25 players");
+                Console.WriteLine("Highscore - Top 15 players");
                 Console.WriteLine("------------------------------------------");
                 Console.WriteLine();
 
-                var scores = db.SortedSetRangeByRankWithScores("scores", 0, 25, Order.Descending);
+                var scores = db.SortedSetRangeByRankWithScores("scores", 0, 15, Order.Descending);
 
                 foreach (var score in scores)
                 {
